@@ -17,13 +17,13 @@ app.get('/app/:num', function (req, res) {
 
 var ports = [];
 io.on('connection', function (socket) {
-  ports.push(socket.request.connection.remoteAddress);
+  ports.push(socket.request.headers['x-forwarded-for']);
   console.log(ports);
   io.emit('changeCnt', ports.filter(function (item, pos) {
     return ports.indexOf(item) == pos;
   }).length);
   socket.on('disconnect', function () {
-    ports.splice(ports.indexOf(socket.request.connection.remoteAddress), 1);
+    ports = ports.splice(ports.indexOf(socket.request.headers['x-forwarded-for']), 1);
     console.log(ports);
     io.emit('changeCnt', ports.length);
   });
