@@ -7,7 +7,7 @@
       <div id="earth" style="position: relative; width: 100%; height: 25px; top: calc(100vh - 125px); background-color: green;"></div>
     </div>
     <div style="margin: 15px;">
-      <button onclick="fall();" style="margin-bottom: 5px;">start</button>
+      <button id="_button" onclick="fall();" style="margin-bottom: 5px;">start</button>
       <div style="margin: 5px; width: 100%;">질량: <div id="mass">10</div>kg</div>
       <div style="margin: 5px; width: 100%;"><input class="slider" type="range" min="1" max="100" value="10" step="0.01" onchange="setMass(this.value);"></input></div>
       <div style="margin: 5px; width: 100%;">공기 저항력 계수: <div id="drag">0</div>Ns^2/m^2</div>

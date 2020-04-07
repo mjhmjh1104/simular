@@ -17,6 +17,8 @@ var pxDiv = $('#px');
 var lengthDiv = $('#length');
 var infoDiv = $('#moreInfo');
 var dataes = [];
+var sliders = $('.slider');
+var button = $('#_button');
 
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
@@ -71,6 +73,8 @@ function fall() {
   position = 0;
   var cnt = 0;
   dataes = [];
+  sliders.prop('disabled', true);
+  button.prop('disabled', true);
   interval = setInterval(function () {
     cnt += 10;
     force = gravity * mass - drag * velocity * velocity;
@@ -85,6 +89,8 @@ function fall() {
       clearInterval(interval);
       position = earth.offsetTop / meter - length;
       body.style.top = (position * meter) + 'px';
+      sliders.prop('disabled', false);
+      button.prop('disabled', false);
     }
   }, 10);
 };
