@@ -23,7 +23,7 @@ io.on('connection', function (socket) {
     return ports.indexOf(item) == pos;
   }).length);
   socket.on('disconnect', function () {
-    ports = ports.splice(ports.indexOf(socket.request.connection.remoteAddress), 1);
+    ports.splice(ports.indexOf(socket.request.connection.remoteAddress), 1);
     console.log(ports);
     io.emit('changeCnt', ports.length);
   });
