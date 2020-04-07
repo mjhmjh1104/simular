@@ -1,0 +1,123 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+html, head, body {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 100%;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.outer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #EEE;
+  position: fixed;
+}
+
+.inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.contents {
+  background-color: white;
+  padding: 30px;
+  display: block;
+}
+
+.app {
+  display: block;
+  background-color: #EEE;
+  transition-duration: .3s;
+  cursor:pointer;
+}
+.app:hover {
+  background-color: #CCC;
+}
+
+.apps {
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .contents {
+    margin: 50px 150px;
+    width: calc(100% - 360px);
+    height: calc(100% - 160px);
+    border-radius: 10px;
+  }
+  .app {
+    width: 400px;
+    height: 250px;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .contents {
+    margin: 25px 75px;
+    width: calc(100% - 210px);
+    height: calc(100% - 110px);
+    border-radius: 10px;
+  }
+  .app {
+    width: 300px;
+    height: 200px;
+  }
+}
+@media (max-width: 599px) and (min-width: 500px) {
+  .contents {
+    margin: 25px 50px;
+    width: calc(100% - 160px);
+    height: calc(100% - 110px);
+    border-radius: 10px;
+  }
+  .app {
+    width: 300px;
+    height: 200px;
+  }
+}
+@media (max-width: 499px) {
+  .contents {
+    margin: 0 0;
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    border-radius: 0;
+  }
+  .app {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.online {
+  background-color: blue;
+  color: white;
+  display: inline-block;
+  padding: 0 10px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 30px;
+}
+
+.onlineHover {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.appLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
