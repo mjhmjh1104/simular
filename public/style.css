@@ -139,14 +139,14 @@ button:active {
 }
 
 
-@media (min-width: 650px) {
+@media (min-width: 1000px) {
   #chart_div {
     position: absolute;
     right: 15px;
     top: 15px;
   }
 }
-@media (max-width: 649px) {
+@media (max-width: 999px) {
   #chart_div {
     position: relative;
     left: 15px;
