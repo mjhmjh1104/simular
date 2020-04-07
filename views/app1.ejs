@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head><%- include('head') %></head>
-  <body>
+  <body style="background-color: #EEE;">
+    <div id="origin" style="position: absolute; top: 50px; left: 0; width: 100%; z-index: -1;">
+      <div id="body" style="width: 50px; height: 50px; display: block; background-color: blue; position: relative; left: calc(50% - 25px);"></div>
+      <div id="earth" style="position: relative; width: 100%; height: 25px; top: calc(100vh - 125px); background-color: green;"></div>
+    </div>
+    <div style="margin: 15px;">
+      <button onclick="fall();" style="margin-bottom: 5px;">start</button>
+      <div style="margin: 5px; width: 100%;">질량: <div id="mass">10</div>kg</div>
+      <div style="margin: 5px; width: 100%;"><input class="slider" type="range" min="1" max="100" value="10" step="0.01" onchange="setMass(this.value);"></input></div>
+      <div style="margin: 5px; width: 100%;">공기 저항력 계수: <div id="drag">0</div>Ns^2/m^2</div>
+      <div style="margin: 5px; width: 100%;"><input class="slider" type="range" min="0" max="1000" value="0" step="0.01" onchange="setDrag(this.value);"></input></div>
+      <div style="margin: 5px; width: 100%;">축척: <div id="px">20</div>px/m</div>
+      <div style="margin: 5px; width: 100%;"><input class="slider" type="range" min="1" max="100" value="20" step="0.01" onchange="setMeter(this.value);"></input></div>
+      <div style="margin: 5px; width: 100%;">길이: <div id="length">2</div>m</div>
+      <div style="margin: 5px; width: 100%;"><input class="slider" type="range" min="0.01" max="10" value="2" step="0.01" onchange="setLength(this.value);"></input></div>
+      <div style="margin: 5px; width: 100%;"><div id="moreInfo"></div></div>
+    </div>
+    <div id="chart_div" style="z-index: -2;"></div>
     <%- include('script') %>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="/js/app1.js"></script>
+    </script>
   </body>
 </html>

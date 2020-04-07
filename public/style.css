@@ -121,3 +121,35 @@ div {
   width: 100%;
   height: 100%;
 }
+
+button {
+  border: 0;
+  background-color: #3A3;
+  padding: 10px 15px;
+  font-size: 15px;
+  color: white;
+}
+
+button:hover {
+  background-color: #5C5;
+}
+
+button:active {
+  background-color: #7E7;
+}
+
+
+@media (min-width: 650px) {
+  #chart_div {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+}
+@media (max-width: 649px) {
+  #chart_div {
+    position: relative;
+    left: 15px;
+    top: 50vh;
+  }
+}
