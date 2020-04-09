@@ -124,18 +124,33 @@ div {
 
 button {
   border: 0;
-  background-color: #3A3;
   padding: 10px 15px;
   font-size: 15px;
   color: white;
 }
 
-button:hover {
+#buttonStart {
+  background-color: #3A3;
+}
+
+#buttonStop {
+  background-color: #D20;
+}
+
+#buttonStart:hover {
   background-color: #5C5;
 }
 
-button:active {
+#buttonStop:hover {
+  background-color: #E31;
+}
+
+#buttonStart:active {
   background-color: #7E7;
+}
+
+#buttonStop:active {
+  background-color: #F42;
 }
 
 

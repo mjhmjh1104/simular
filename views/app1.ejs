@@ -7,16 +7,23 @@
       <div id="earth" style="position: relative; width: 100%; height: 25px; top: calc(100vh - 125px); background-color: green;"></div>
     </div>
     <div style="margin: 15px;">
-      <button id="_button" onclick="fall();" style="margin-bottom: 5px;">start</button>
+      <button id="buttonStart" onclick="fall();" style="margin-bottom: 5px;">시작</button>
+      <button id="buttonStop" onclick="iClear();" style="margin-bottom: 5px;">종료</button>
+      <div style="margin: 5px; width: 100%;">중력장: <div id="gravity">9.8</div>N/kg</div>
+      <div style="margin: 5px; width: 100%;"><input class="slider" type="range" min="0" max="100" value="9.8" step="0.01" onchange="setGravity(this.value);"></input></div>
       <div style="margin: 5px; width: 100%;">질량: <div id="mass">10</div>kg</div>
       <div style="margin: 5px; width: 100%;"><input class="slider" type="range" min="1" max="100" value="10" step="0.01" onchange="setMass(this.value);"></input></div>
-      <div style="margin: 5px; width: 100%;">공기 저항력 계수: <div id="drag">0</div>Ns^2/m^2</div>
-      <div style="margin: 5px; width: 100%;"><input class="slider" type="range" min="0" max="1000" value="0" step="0.01" onchange="setDrag(this.value);"></input></div>
+      <div style="margin: 5px; width: 100%;">공기 밀도: <div id="density">0</div></div>
+      <div style="margin: 5px; width: 100%;"><input class="slider" type="range" min="0" max="10" value="0" step="0.01" onchange="setDensity(this.value);"></input></div>
+      <div style="margin: 5px; width: 100%;">항력 계수: <div id="drag">1.05</div></div>
+      <div style="margin: 5px; width: 100%;"><input class="slider" type="range" min="0" max="10" value="1.05" step="0.01" onchange="setDrag(this.value);"></input></div>
       <div style="margin: 5px; width: 100%;">축척: <div id="px">20</div>px/m</div>
       <div style="margin: 5px; width: 100%;"><input class="slider" type="range" min="1" max="100" value="20" step="0.01" onchange="setMeter(this.value);"></input></div>
       <div style="margin: 5px; width: 100%;">길이: <div id="length">2</div>m</div>
       <div style="margin: 5px; width: 100%;"><input class="slider" type="range" min="0.01" max="10" value="2" step="0.01" onchange="setLength(this.value);"></input></div>
       <div style="margin: 5px; width: 100%;"><div id="moreInfo"></div></div>
+      <div style="margin: 5px; width: 100%;">땅 없애기&nbsp;</div>
+      <div style="margin: 5px; width: 100%;"><input id="sGround" class="checkbox" type="checkbox"></input></div>
     </div>
     <div id="chart_div" style="z-index: 2;"></div>
     <%- include('script') %>
